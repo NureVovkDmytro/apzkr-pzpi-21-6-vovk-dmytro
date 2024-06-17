@@ -1,0 +1,40 @@
+<app-nav-bar *ngIf="isActivateMode"></app-nav-bar>
+
+<section class="position-relative py-4 py-xl-5">
+    <div class="container">
+        <div class="row mb-5" *ngIf="isActivateMode">
+            <div class="col-md-8 col-xl-6 text-center mx-auto">
+                <h2>{{'activationPage.title' | translate}}</h2>
+                <h3>{{'activationPage.welcome' | translate}} {{email}}!</h3>
+            </div>
+        </div>
+        <div class="row d-flex justify-content-center">
+            <div class="col-md-6 col-xl-4">
+                <div class="card mb-5">
+                    <div class="card-body d-flex flex-column align-items-center">
+                        <form class="text-center" method="post">
+                            <div class="mb-3" *ngIf="isChangePasswordMode">
+                                <input class="form-control" type="password" name="password" placeholder="{{'activationPage.oldPassword' | translate}}" [(ngModel)]="oldPassword" />
+                            </div>
+                            <div class="mb-3">
+                                <input class="form-control" type="password" name="password" placeholder="{{'activationPage.newPassword' | translate}}" [(ngModel)]="newPassword" />
+                            </div>
+                            <div class="mb-3">
+                                <input class="form-control" type="password" name="password" placeholder="{{'activationPage.confirmPassword' | translate}}" [(ngModel)]="confirmPassword" />
+                            </div>
+                            <div class="mb-3 errors">
+                                <ul class="list-unstyled text-start">
+                                    <li *ngFor="let error of passwordRequirements | keyvalue" class="{{error.value.valid ? 'valid' : 'invalid'}}">{{error.key| translate}}</li>
+                                </ul>
+                            </div>
+                            <div class="mb-3">
+                                <button class="btn btn-primary d-block w-100" type="button"
+                                    (click)="submit()" [disabled]="!validatePassword()">{{(isActivateMode ? 'activationPage.activate' : 'buttons.changePassword') | translate}}</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,235 @@
+{
+  "activationPage": {
+    "activate": "Активувати",
+    "alert": {
+      "passwordChangeFailed": "Не вдалося змінити пароль",
+      "passwordChanged": "Пароль успішно змінено"
+    },
+    "confirmPassword": "Підтвердити пароль",
+    "error": {
+      "passwordNoLetter": "Пароль повинен містити принаймні одну літеру",
+      "passwordNoLowercase": "Пароль повинен містити принаймні одну маленьку літеру",
+      "passwordNoNumber": "Пароль повинен містити принаймні одну цифру",
+      "passwordNoSpecial": "Пароль повинен містити принаймні один спеціальний символ",
+      "passwordNoUppercase": "Пароль повинен містити принаймні одну велику літеру",
+      "passwordTooLong": "Пароль занадто довгий (максимум 64 символів)",
+      "passwordTooShort": "Пароль занадто короткий (мінімум 8 символів)",
+      "passwordWhitespace": "Пароль не повинен містити пробіли",
+      "passwordsDoNotMatch": "Паролі не співпадають"
+    },
+    "newPassword": "Новий пароль",
+    "oldPassword": "Старий пароль",
+    "title": "Активація облікового запису",
+    "welcome": "Ласкаво просимо,"
+  },
+  "admin": {
+    "robot": {
+      "getToken": "Отримати токен"
+    },
+    "user": {
+      "accessLevel": {
+        "description": "Від 1 до 999. 1 - найнижчий рівень доступу, 999 - найвищий"
+      },
+      "scanRadius": {
+        "description": "Радіус сканування в метрах"
+      },
+      "updateLocationSecondsInterval": {
+        "description": "Час задавати у секундах"
+      }
+    }
+  },
+  "alert": {
+    "confirm": {
+      "error": "Помилка підтвердження дії.",
+      "success": "Підтвердження дії успішне!"
+    }
+  },
+  "buttons": {
+    "activate": "Активувати",
+    "add": "Додати",
+    "back": "Назад",
+    "cancel": "Скасувати",
+    "changePassword": "Змінити пароль",
+    "close": "Закрити",
+    "confirm": "Підтвердити",
+    "create": "Створити",
+    "delete": "Видалити",
+    "edit": "Редагувати",
+    "login": "Авторизуватися",
+    "logout": "Вийти",
+    "reset": "Скинути",
+    "save": "Зберегти",
+    "send": "Надіслати",
+    "view": "Переглянути"
+  },
+  "editUser": {
+    "actions": {
+      "resetPassword": "Скинути пароль",
+      "title": "Дії"
+    },
+    "basicInfo": "Основна інформація"
+  },
+  "groupMemberList": {
+    "add": "Додати учасника"
+  },
+  "login": {
+    "email": "Електронна пошта",
+    "error": "Невірне ім'я користувача або пароль",
+    "forgot": "Забули пароль?",
+    "login": "Увійти",
+    "password": "Пароль",
+    "title": "Вхід"
+  },
+  "map": {
+    "confirmBox": {
+      "message": "Ви впевнені?",
+      "title": "Підтвердження"
+    }
+  },
+  "mapSettings": {
+    "groups": "Групи",
+    "marker": {
+      "description": "Опис",
+      "name": "Назва",
+      "title": "Маркер"
+    },
+    "selectGroup": {
+      "selectGroup": "Група",
+      "title": "Оберіть групу"
+    }
+  },
+  "models": {
+    "client": {
+      "accessLevel": "Рівень доступу",
+      "createdAt": "Створено",
+      "description": "Опис",
+      "groups": "Групи",
+      "id": "ID",
+      "lastOnline": "Останній раз онлайн",
+      "location": "Місцезнаходження",
+      "nickname": "Позивний",
+      "permissions": "Дозволи",
+      "scanRadius": "Радіус сканування",
+      "sessions": "Сесії",
+      "status": "Статус",
+      "type": "Тип"
+    },
+    "clientStatuses": {
+      "active": "Активний",
+      "any": "Будь-який",
+      "banned": "Заблокований",
+      "inactive": "Неактивний",
+      "limited": "Обмежений"
+    },
+    "clientTypes": {
+      "any": "Будь-який",
+      "robot": "Робот",
+      "user": "Користувач"
+    },
+    "group": {
+      "ID": "ID",
+      "accessLevel": "Рівень доступу",
+      "createdAt": "Створено",
+      "description": "Опис",
+      "members": "Учасники",
+      "name": "Назва"
+    },
+    "permission": {
+      "groups": {
+        "canCreate": "Може створювати",
+        "canDelete": "Може видаляти",
+        "canManageMarks": "Може керувати мітками",
+        "canRead": "Може читати",
+        "canUpdate": "Може оновлювати",
+        "name": "Групи"
+      },
+      "robots": {
+        "canCreate": "Може створювати",
+        "canDelete": "Може видаляти",
+        "canRead": "Може читати",
+        "canUpdate": "Може оновлювати",
+        "canUpdateAccessLevel": "Може оновлювати рівень доступу",
+        "canUpdateScanRadius": "Може оновлювати радіус сканування",
+        "canUpdateStatus": "Може оновлювати статус",
+        "name": "Роботи"
+      },
+      "users": {
+        "canCreate": "Може створювати",
+        "canCreateDeviceToken": "Може створювати токен пристрою",
+        "canDelete": "Може видаляти",
+        "canRead": "Може читати",
+        "canResetPassword": "Може скидати пароль",
+        "canUpdate": "Може оновлювати",
+        "canUpdateAccessLevel": "Може оновлювати рівень доступу",
+        "canUpdateBaseInformation": "Може оновлювати основну інформацію",
+        "canUpdatePermissions": "Може оновлювати дозволи",
+        "canUpdateScanRadius": "Може оновлювати радіус сканування",
+        "canUpdateSelfEmail": "Може оновлювати власну електронну пошту",
+        "canUpdateStatus": "Може оновлювати статус",
+        "name": "Користувачі"
+      }
+    },
+    "robot": {
+      "groupId": "Група"
+    },
+    "session": {
+      "expiresAt": "Закінчується",
+      "id": "ID",
+      "lastAccessed": "Останній доступ",
+      "lastUpdated": "Останнє оновлення"
+    },
+    "user": {
+      "email": "Електронна пошта",
+      "firstName": "Ім'я",
+      "lastName": "Прізвище",
+      "taxPayerId": "РНОКПП (ІПН)",
+      "updateLocationSecondsInterval": "Інтервал оновлення даних"
+    }
+  },
+  "navigation": {
+    "groups": {
+      "add": "Додати",
+      "list": "Список",
+      "my": "Мої групи",
+      "title": "Групи"
+    },
+    "logout": "Вихід",
+    "robots": {
+      "add": "Додати",
+      "list": "Список",
+      "title": "Роботи"
+    },
+    "settings": "Налаштування",
+    "theme": {
+      "auto": "Авто",
+      "dark": "Темна",
+      "light": "Світла"
+    },
+    "users": {
+      "add": "Додати",
+      "list": "Список",
+      "title": "Користувачі"
+    }
+  },
+  "table": {
+    "actions": "Дії",
+    "loadMore": "Завантажити ще...",
+    "reset": "Скинути",
+    "search": "Пошук",
+    "view": "Переглянути"
+  },
+  "userList": {
+    "confirmSelection": "Підтвердити вибір",
+    "downloadDeviceConfig": "Завантажити конфігурацію пристрою",
+    "downloadDeviceConfigFailed": "Не вдалося завантажити конфігурацію пристрою"
+  },
+  "userSettings": {
+    "emailChanged": "Підтвердження зміни електронної пошти було відправлено на нову адресу"
+  },
+  "viewGroup": {
+    "members": {
+      "list": "Список учасників"
+    },
+    "setArea": "Встановити область"
+  }
+}

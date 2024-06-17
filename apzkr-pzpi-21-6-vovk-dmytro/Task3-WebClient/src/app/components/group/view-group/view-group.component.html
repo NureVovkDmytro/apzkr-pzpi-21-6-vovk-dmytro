@@ -1,0 +1,35 @@
+<div class="container">
+    <form>
+        <div>
+            <label class="form-label">{{'models.group.name' | translate}}<i class="required"></i></label>
+            <input class="form-control" type="text" name="name"
+                [disabled]="!isAdmin || !currentUser.permissions.groups.canUpdate" [(ngModel)]="group.name" />
+        </div>
+        <div>
+            <label class="form-label">{{'models.group.accessLevel' | translate}}<i class="required"></i></label>
+            <input class="form-control" type="number" name="accessLevel"
+                [disabled]="!isAdmin || !currentUser.permissions.groups.canUpdate" [(ngModel)]="group.accessLevel"
+                [max]="maxAccessLevel" [min]="1" />
+        </div>
+        <div>
+            <label class="form-label">{{'models.group.description' | translate}}</label>
+            <textarea class="form-control" rows="5" name="description"
+                [disabled]="!isAdmin || !currentUser.permissions.groups.canUpdate"
+                [(ngModel)]="group.description"></textarea>
+        </div>
+
+        <div class="text-center" *ngIf="isEditMode">
+            <button class="btn btn-primary" type="button" style="min-width: 150px;" [routerLink]="['/home/group', group.id, 'members']">{{'viewGroup.members.list' | translate}} ({{memberCount}})</button>
+            <button class="btn btn-primary" type="button" style="min-width: 150px;" (click)="setArea()">{{'viewGroup.setArea' | translate}}</button>
+        </div>
+
+        <div class="text-center">
+            <button class="btn btn-secondary" type="button" style="min-width: 150px;" (click)="back()">{{'buttons.back' |
+                translate}}</button>
+            <button class="btn btn-primary" type="button" style="min-width: 150px;" (click)="save()">{{'buttons.save' |
+                translate}}</button>
+            <button class="btn btn-danger" type="button" style="min-width: 150px;" (click)="delete()" *ngIf="currentUser.permissions.groups.canDelete && isAdmin">{{'buttons.delete' |
+                translate}}</button>
+        </div>
+    </form>
+</div>

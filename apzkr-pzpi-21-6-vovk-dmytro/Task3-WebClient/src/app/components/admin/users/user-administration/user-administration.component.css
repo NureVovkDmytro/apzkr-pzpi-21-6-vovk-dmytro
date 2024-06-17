@@ -1,0 +1,15 @@
+i.required::before{
+    color: red;
+    content: '*';
+}
+.form-label.description{
+    font-size: 12px;
+    color: #6c757d;
+}
+.editor > div{
+    margin-top: 5px;
+}
+
+.buttons > button{
+    margin: 5px;
+}

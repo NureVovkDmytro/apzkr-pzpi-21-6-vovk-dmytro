@@ -1,0 +1,15 @@
+<div class="list" [style]="positionStyle">
+    <div class="list-bg"></div>
+    <div class="list-title" (click)="toggleList()">
+        {{title | translate}}
+        <svg class="bi bi-chevron-up {{opened ? '' : 'closed'}}" xmlns="http://www.w3.org/2000/svg" width="1em"
+            height="1em" fill="currentColor" viewBox="0 0 16 16">
+            <path fill-rule="evenodd"
+                d="M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z">
+            </path>
+        </svg>
+    </div>
+    <div class="list-content {{opened ? '' : 'closed'}}">
+        <ng-content></ng-content>
+    </div>
+</div>

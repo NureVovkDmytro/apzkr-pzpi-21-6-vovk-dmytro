@@ -1,0 +1,59 @@
+<div class="control-area">
+
+    <app-map-settings-tool-box class="group-list" [title]="'mapSettings.groups'">
+        <div class="group-list-item" *ngFor="let group of groups">
+            <div class="group-list-item-title">
+                <a [routerLink]="['/home/group', group.item.id]">{{group.item.name}}</a>
+            </div>
+            <div class="group-list-item-checkbox">
+                <input type="checkbox" [checked]="group.checked" (change)="toggleGroup(group)">
+            </div>
+        </div>
+    </app-map-settings-tool-box>
+
+    <a class="add-marker-box" (click)="openAddMarker()">
+        <img src="assets/icons/add-marker.png" class="locate">
+    </a>
+    
+    <a class="subscribe-box" (click)="toggleSubscribeToMeLocation()">
+        <img src="assets/icons/navigation-subscribe-{{config.subscribeToMeLocation ? 'on' : 'off'}}.png" class="locate">
+    </a>
+</div>
+
+<app-modal-box [title]="'mapSettings.selectGroup.title' | translate" [isVisible]="isOpenAddMarker" (onClosed)="closeAddMarker()">
+    <select content class="form-control">
+        <option value="" selected>{{'mapSettings.selectGroup.selectGroup' | translate}}</option>
+        <option *ngFor="let group of groups" [value]="group.item.id" (click)="selectGroup(group.item)">{{group.item.name}}</option>
+    </select>
+    <div footer>
+        <button class="btn btn-primary" (click)="enableAddMarker()">{{'buttons.confirm' | translate}}</button>
+        <button class="btn btn-secondary" (click)="closeAddMarker()">{{'buttons.cancel' | translate}}</button>
+    </div>
+</app-modal-box>
+
+<app-modal-box [title]="'mapSettings.marker.title' | translate" [isVisible]="isOpenMarker" (onClosed)="closeMarker()">
+    <div content>
+        <div class="form-group row">
+            <label class="col-sm-4 col-form-label">{{'mapSettings.marker.name' | translate}}</label>
+            <div class="col-sm-8">
+                <input type="text" class="form-control" [(ngModel)]="marker.name">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-4 col-form-label">{{'mapSettings.marker.description' | translate}}</label>
+            <div class="col-sm-8">
+                <textarea class="form-control" [(ngModel)]="marker.description"></textarea>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-4 col-form-label">{{'mapSettings.marker.radius' | translate}}</label>
+            <div class="col-sm-8">
+                <input type="number" min="0" max="500" step="1" class="form-control" [(ngModel)]="marker.radius">
+            </div>
+        </div>
+    </div>
+    <div footer>
+        <button class="btn btn-primary" (click)="saveMarker()">{{'buttons.confirm' | translate}}</button>
+        <button class="btn btn-secondary" (click)="closeMarker()">{{'buttons.cancel' | translate}}</button>
+    </div>
+</app-modal-box>

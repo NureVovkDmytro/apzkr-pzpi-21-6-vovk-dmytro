@@ -1,0 +1,12 @@
+<app-table 
+[columns]="columns"
+[searchFilters]="searchFilters" 
+[data]="data" 
+[actions]="tableActions"
+(onSearch)="onSearch($event)"
+></app-table>
+
+<div class="text-center" *ngIf="selectMode.enabled">
+    <button class="btn btn-success" type="button" style="min-width: 128px;" (click)="confirm()">{{'userList.confirmSelection' | translate}}</button>
+    <button class="btn btn-secondary" type="button" style="min-width: 128px;" (click)="cancel()">{{'buttons.cancel' | translate}}</button>
+</div>

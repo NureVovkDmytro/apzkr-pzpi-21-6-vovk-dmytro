@@ -1,0 +1,236 @@
+{
+  "activationPage": {
+    "activate": "Activate",
+    "alert": {
+      "passwordChangeFailed": "Password change failed",
+      "passwordChanged": "Password changed successfully"
+    },
+    "confirmPassword": "Confirm Password",
+    "error": {
+      "passwordNoLetter": "Password must contain at least one letter",
+      "passwordNoLowercase": "Password must contain at least one lowercase letter",
+      "passwordNoNumber": "Password must contain at least one number",
+      "passwordNoSpecial": "Password must contain at least one special character",
+      "passwordNoUppercase": "Password must contain at least one uppercase letter",
+      "passwordTooLong": "Password is too long (maximum 64 characters)",
+      "passwordTooShort": "Password is too short (minimum 8 characters)",
+      "passwordWhitespace": "Password cannot contain whitespace",
+      "passwordsDoNotMatch": "Passwords do not match"
+    },
+    "newPassword": "New Password",
+    "oldPassword": "Old Password",
+    "title": "Activate your account",
+    "welcome": "Welcome,"
+  },
+  "admin": {
+    "robot": {
+      "getToken": "Get Token"
+    },
+    "user": {
+      "accessLevel": {
+        "description": "From 1 to 999. 1 is the lowest access level, 999 is the highest"
+      },
+      "scanRadius": {
+        "description": "Scan Radius in meters"
+      },
+      "updateLocationSecondsInterval": {
+        "description": "Set the time in seconds"
+      }
+    }
+  },
+  "alert": {
+    "confirm": {
+      "error": "Action confirmation error.",
+      "success": "Action confirmation is successful!"
+    }
+  },
+  "buttons": {
+    "activate": "Activate",
+    "add": "Add",
+    "back": "Back",
+    "cancel": "Cancel",
+    "changePassword": "Change Password",
+    "close": "Close",
+    "confirm": "Confirm",
+    "create": "Create",
+    "delete": "Delete",
+    "edit": "Edit",
+    "login": "Login",
+    "logout": "Logout",
+    "reset": "Reset",
+    "save": "Save",
+    "send": "Send",
+    "view": "View"
+  },
+  "editUser": {
+    "actions": {
+      "resetPassword": "Reset Password",
+      "title": "Actions"
+    },
+    "basicInfo": "Basic Info"
+  },
+  "groupMemberList": {
+    "add": "Add Member"
+  },
+  "login": {
+    "email": "Email",
+    "error": "Invalid username or password",
+    "forgot": "Forgot password?",
+    "login": "Login",
+    "password": "Password",
+    "title": "Login"
+  },
+  "map": {
+    "confirmBox": {
+      "message": "Are you sure?",
+      "title": "Confirm"
+    }
+  },
+  "mapSettings": {
+    "groups": "Groups",
+    "marker": {
+      "description": "Description",
+      "name": "Name",
+      "title": "Marker"
+    },
+    "selectGroup": {
+      "selectGroup": "Group",
+      "title": "Select Group"
+    }
+  },
+  "models": {
+    "client": {
+      "accessLevel": "Access Level",
+      "createdAt": "Created At",
+      "description": "Description",
+      "groups": "Groups",
+      "id": "ID",
+      "lastOnline": "Last Online",
+      "location": "Location",
+      "nickname": "Nickname",
+      "permissions": "Permissions",
+      "scanRadius": "Scan Radius",
+      "sessions": "Sessions",
+      "status": "Status",
+      "type": "Type"
+    },
+    "clientStatuses": {
+      "active": "Active",
+      "any": "Any",
+      "banned": "Banned",
+      "inactive": "Inactive",
+      "limited": "Limited"
+    },
+    "clientTypes": {
+      "any": "Any",
+      "robot": "Robot",
+      "user": "User"
+    },
+    "group": {
+      "ID": "ID",
+      "accessLevel": "Access Level",
+      "createdAt": "Created At",
+      "description": "Description",
+      "members": "Members",
+      "name": "Name"
+    },
+    "permission": {
+      "groups": {
+        "canCreate": "Can Create",
+        "canDelete": "Can Delete",
+        "canManageMarks": "Can Manage Marks",
+        "canRead": "Can Read",
+        "canUpdate": "Can Update",
+        "name": "Groups"
+      },
+      "robots": {
+        "canCreate": "Can Create",
+        "canDelete": "Can Delete",
+        "canRead": "Can Read",
+        "canUpdate": "Can Update",
+        "canUpdateAccessLevel": "Can Update Access Level",
+        "canUpdateScanRadius": "Can Update Scan Radius",
+        "canUpdateStatus": "Can Update Status",
+        "name": "Robots"
+      },
+      "users": {
+        "canCreate": "Can Create",
+        "canCreateDeviceToken": "Can Create Device Token",
+        "canDelete": "Can Delete",
+        "canRead": "Can Read",
+        "canResetPassword": "Can Reset Password",
+        "canUpdate": "Can Update",
+        "canUpdateAccessLevel": "Can Update Access Level",
+        "canUpdateBaseInformation": "Can Update Base Information",
+        "canUpdateOtherUsersPassword": "Can Update Other Users Password",
+        "canUpdatePermissions": "Can Update Permissions",
+        "canUpdateScanRadius": "Can Update Scan Radius",
+        "canUpdateSelfEmail": "Can Update Self Email",
+        "canUpdateStatus": "Can Update Status",
+        "name": "Users"
+      }
+    },
+    "robot": {
+      "groupId": "Selected Group"
+    },
+    "session": {
+      "expiresAt": "Expires At",
+      "id": "ID",
+      "lastAccessed": "Last Accessed",
+      "lastUpdated": "Last Updated"
+    },
+    "user": {
+      "email": "Email",
+      "firstName": "First Name",
+      "lastName": "Last Name",
+      "taxPayerId": "Tax Payer ID",
+      "updateLocationSecondsInterval": "Data update interval"
+    }
+  },
+  "navigation": {
+    "groups": {
+      "add": "Add",
+      "list": "List",
+      "my": "My Groups",
+      "title": "Groups"
+    },
+    "logout": "Logout",
+    "robots": {
+      "add": "Add",
+      "list": "List",
+      "title": "Robots"
+    },
+    "settings": "Settings",
+    "theme": {
+      "auto": "Auto",
+      "dark": "Dark",
+      "light": "Light"
+    },
+    "users": {
+      "add": "Add",
+      "list": "List",
+      "title": "Users"
+    }
+  },
+  "table": {
+    "actions": "Actions",
+    "loadMore": "Load More...",
+    "reset": "Reset",
+    "search": "Search",
+    "view": "View"
+  },
+  "userList": {
+    "confirmSelection": "Confirm Selection",
+    "downloadDeviceConfig": "Download Device Config",
+    "downloadDeviceConfigFailed": "Failed to download device config"
+  },
+  "userSettings": {
+    "emailChanged": "See your email to confirm the changes."
+  },
+  "viewGroup": {
+    "members": {
+      "list": "Members"
+    },
+    "setArea": "Set Area"
+  }
+}

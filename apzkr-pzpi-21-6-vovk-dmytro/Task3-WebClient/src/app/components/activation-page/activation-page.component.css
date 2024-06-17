@@ -1,0 +1,10 @@
+.valid{
+    color: green;
+}
+
+.invalid{
+    color: var(--bs-form-invalid-color);
+}
+.errors{
+    font-size: 0.8rem;
+}

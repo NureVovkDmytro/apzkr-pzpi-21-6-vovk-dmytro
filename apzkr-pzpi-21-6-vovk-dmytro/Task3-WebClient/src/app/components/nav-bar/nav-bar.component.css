@@ -1,0 +1,16 @@
+.flexed{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999999;
+    opacity: 0.9;
+}
+
+.flexed *{
+    z-index: 9999999999999999;
+}
+
+a{
+    cursor: pointer;
+}

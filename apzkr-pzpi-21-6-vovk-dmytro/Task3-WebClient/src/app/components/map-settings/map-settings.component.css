@@ -1,0 +1,47 @@
+.control-area * {
+    z-index: 999990;
+}
+
+.control-area >* {
+    position: absolute;
+}
+
+.subscribe-box {
+    position: absolute;
+    left: 10px;
+    bottom: 50px;
+    cursor: pointer;
+}
+
+.group-list {
+    left: 5px;
+    top: 60px;
+}
+
+.group-list-item {
+    cursor: pointer;
+    padding: 5px;
+    border-bottom: 1px solid var(--bs-light);
+}
+.group-list-item>.group-list-item-title{
+    min-width: 128px;
+}
+.group-list-item>.group-list-item-title,
+.group-list-item>.group-list-item-checkbox{
+    display: inline-block;
+}
+.add-marker-box,
+.add-marker-box img {
+    cursor: pointer;
+    width: 48px;
+    height: 48px;
+}
+.add-marker-box{
+    position: absolute;
+    left: 60px;
+    bottom: 50px;
+}
+.subscribe-box img:hover,
+.add-marker-box img:hover {
+    opacity: 0.75;
+}

@@ -1,0 +1,19 @@
+<div id="map"></div>
+
+<app-map-settings [map]="map" [meLocation]="meLocation" [config]="config" [init]="init"></app-map-settings>
+
+<div class="control-area">
+    <div class="confirm-box" *ngIf="confirmBox.visible">
+        <div class="confirm-box-bg"></div>
+        <div class="confirm-box-content">
+            <div class="confirm-box-title">{{confirmBox.title | translate}}</div>
+            <div class="confirm-box-message">{{confirmBox.message | translate}}</div>
+            <div class="confirm-box-buttons">
+                <button class="btn btn-success" (click)="confirm()">{{"buttons.confirm" |
+                    translate}}</button>
+                <button class="btn btn-secondary" (click)="cancel()">{{"buttons.cancel" |
+                    translate}}</button>
+            </div>
+        </div>
+    </div>
+</div>

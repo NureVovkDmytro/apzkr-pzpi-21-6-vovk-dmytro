@@ -1,0 +1,6 @@
+@Discerniy.API_HostAddress = http://localhost:5057
+
+GET {{Discerniy.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

@@ -1,0 +1,108 @@
+<div class="container">
+    <form>
+        <div class="editor">
+            <div *ngIf="isEditMode">
+                <h3 class="text-center">{{'editUser.actions.title' | translate}}</h3>
+                <hr />
+                <div>
+                    <button class="btn btn-primary" type="button"
+                        [disabled]="!currentUser.permissions.users.canResetPassword"
+                        (click)="resetPassword()"
+                        >{{'editUser.actions.resetPassword'
+                        | translate}}</button>
+                    <button class="btn btn-danger" type="button"
+                        [disabled]="!currentUser.permissions.users.canDelete"
+                        (click)="deleteUser()"
+                        >{{'buttons.delete' |
+                        translate}}</button>
+                    <button class="btn btn-primary" type="button" [disabled]="!currentUser.permissions.users.canRead"
+                        (click)="onGetToken()">{{'userList.downloadDeviceConfig' |
+                        translate}}</button>
+                </div>
+            </div>
+            <h3 class="text-center">{{'editUser.basicInfo' | translate}}</h3>
+            <hr />
+            <div>
+                <label class="form-label">{{'models.user.firstName' | translate}}<i class="required"></i></label>
+                <input class="form-control" type="text" name="firstName" [(ngModel)]="userModel.firstName"
+                    [disabled]="isSelfUser || !currentUser.permissions.users.canUpdateBaseInformation" />
+            </div>
+            <div>
+                <label class="form-label">{{'models.user.lastName' | translate}}<i class="required"></i></label>
+                <input class="form-control" type="text" name="lastName" [(ngModel)]="userModel.lastName"
+                    [disabled]="isSelfUser || !currentUser.permissions.users.canUpdateBaseInformation" />
+            </div>
+            <div>
+                <label class="form-label">{{'models.client.nickname' | translate}}<i class="required"></i></label>
+                <input class="form-control" type="text" name="nickname" [(ngModel)]="userModel.nickname"
+                    [disabled]="isSelfUser || !currentUser.permissions.users.canUpdateBaseInformation" />
+            </div>
+            <div>
+                <label class="form-label">{{'models.user.email' | translate}}<i class="required"></i></label>
+                <input class="form-control" type="email" name="email" [(ngModel)]="userModel.email"
+                    [disabled]="isSelfUser || !currentUser.permissions.users.canUpdateBaseInformation" />
+            </div>
+            <div>
+                <label class="form-label">{{'models.user.taxPayerId' | translate}}<i class="required"></i></label>
+                <input class="form-control" type="text" name="taxPayerId" [(ngModel)]="userModel.taxPayerId"
+                    [disabled]="isSelfUser || !currentUser.permissions.users.canUpdateBaseInformation" />
+            </div>
+            <div>
+                <label class="form-label">{{'models.client.scanRadius' | translate}}<i class="required"></i></label>
+                <input class="form-control" type="number" min="0" step="0.5" value="5" name="scanRadius"
+                    [(ngModel)]="userModel.scanRadius"
+                    [disabled]="isSelfUser || !currentUser.permissions.users.canUpdateScanRadius" />
+                <label class="form-label description">{{'admin.user.scanRadius.description' | translate}}</label>
+            </div>
+            <div>
+                <label class="form-label">{{'models.user.updateLocationSecondsInterval' | translate}}<i class="required"></i></label>
+                <input class="form-control" type="number" min="0" step="0.5" value="5" name="updateLocationSecondsInterval"
+                    [(ngModel)]="userModel.updateLocationSecondsInterval"
+                    [disabled]="isSelfUser || !currentUser.permissions.users.canUpdateScanRadius" />
+                <label class="form-label description">{{'admin.user.updateLocationSecondsInterval.description' | translate}}</label>
+            </div>
+            <div>
+                <label class="form-label">{{'models.client.accessLevel' | translate}}<i class="required"></i></label>
+                <input class="form-control" type="number" min="0" max="999" step="1" value="1" name="accessLevel"
+                    [(ngModel)]="userModel.accessLevel"
+                    [disabled]="isSelfUser || !currentUser.permissions.users.canUpdateAccessLevel" />
+                <label class="form-label description">{{'admin.user.accessLevel.description' | translate}}</label>
+            </div>
+            <div>
+                <label class="form-label">{{'models.client.status' | translate}}</label>
+                <select class="form-select" [(ngModel)]="userModel.status" name="status"
+                    [disabled]="isSelfUser || !currentUser.permissions.users.canUpdateStatus">
+                    <option [value]="0" selected>{{'models.clientStatuses.inactive' | translate}}</option>
+                    <option [value]="1">{{'models.clientStatuses.active' | translate}}</option>
+                    <option [value]="2">{{'models.clientStatuses.limited' | translate}}</option>
+                    <option [value]="3">{{'models.clientStatuses.banned' | translate}}</option>
+                </select>
+            </div>
+            <div>
+                <label class="form-label">{{'models.client.description' | translate}}</label>
+                <textarea class="form-control" rows="5" name="description" [(ngModel)]="userModel.description"
+                    [disabled]="isSelfUser || !currentUser.permissions.users.canUpdateBaseInformation"></textarea>
+            </div>
+            <h3 class="text-center">{{'models.client.permissions' | translate}}</h3>
+            <hr />
+            <div *ngFor="let part of userModel.permissions | keyvalue">
+                <label class="form-label">{{ 'models.permission.' + part.key + '.name' | translate}}</label>
+                <div class="form-check" *ngFor="let permission of permissions[part.key] | keyvalue">
+                    <input id="{{part.key}}Permission-{{permission.key}}"
+                        name="{{part.key}}Permission-{{permission.key}}"
+                        (click)="changePermission(part.key + '.' + permission.key, $event)" [checked]="permission.value"
+                        class="form-check-input" type="checkbox"
+                        [disabled]="isSelfUser || !currentUser.permissions.users.canUpdatePermissions" />
+                    <label class="form-check-label" for="{{part.key}}Permission-{{permission.key}}">{{
+                        'models.permission.' + part.key + '.'+ permission.key | translate}}</label>
+                </div>
+            </div>
+        </div>
+    </form>
+    <div class="d-flex justify-content-center buttons">
+        <button #actionButton class="btn btn-primary" type="button" style="min-width: 128px;"
+            (click)="submit()">{{buttonLabel | translate}}</button>
+        <button class="btn btn-secondary" type="button" style="min-width: 128px;" (click)="cancel()">{{'buttons.cancel'
+            | translate}}</button>
+    </div>
+</div>

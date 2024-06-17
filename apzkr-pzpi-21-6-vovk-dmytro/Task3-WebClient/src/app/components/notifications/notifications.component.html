@@ -1,0 +1,8 @@
+<div class="notifications-box">
+    <div class="notification" *ngFor="let alert of alerts">
+        <ngb-alert [type]="alert.type" (closed)="close(alert)" [animation]="true" [dismissible]="true" (click)="click(alert, $event)" class="{{alert.onclick != null ? 'clickable' : ''}}">
+            <div [innerHTML]="alert.message | translate"></div>
+            <label>{{alert.updateAt | date: 'dd.MM.yyyy HH:mm:ss'}}</label>
+        </ngb-alert>
+    </div>
+</div>

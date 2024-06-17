@@ -1,0 +1,61 @@
+#map {
+    height: 100vh;
+}
+
+.control-area * {
+    z-index: 99999990;
+}
+
+.control-area>* {
+    position: absolute;
+}
+
+.near-client-icon {
+    transition: all 1s;
+}
+
+.subscribe-box {
+    position: absolute;
+    left: 10px;
+    bottom: 50px;
+    cursor: pointer;
+}
+
+.confirm-box {
+    position: absolute;
+    left: 50%;
+    bottom: 10px;
+    transform: translateX(-50%);
+    cursor: pointer;
+}
+
+.confirm-box-bg {
+    z-index: -50 !important;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--bs-body-bg);
+    opacity: 0.8;
+    border-radius: 5px;
+}
+
+.confirm-box-content {
+    z-index: 10 !important;
+    padding: 5px;
+}
+
+.confirm-box-content>.confirm-box-title,
+.confirm-box-content>.confirm-box-message,
+.confirm-box-content>.confirm-box-buttons {
+    text-align: center;
+}
+
+.confirm-box-buttons>button {
+    margin: 5px;
+}
+
+.polygon-point-icon.selected {
+    filter: invert(71%) sepia(72%) saturate(669%) hue-rotate(329deg) brightness(105%) contrast(92%);
+}

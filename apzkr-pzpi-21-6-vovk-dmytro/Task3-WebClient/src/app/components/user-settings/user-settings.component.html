@@ -1,0 +1,49 @@
+<div class="container">
+    <form>
+        <div class="editor">
+            <div>
+                <label class="form-label">{{'models.user.firstName' | translate}}</label>
+                <input class="form-control" type="text" name="firstName" [(ngModel)]="userModel.firstName"
+                    [disabled]="true" />
+            </div>
+            <div>
+                <label class="form-label">{{'models.user.lastName' | translate}}</label>
+                <input class="form-control" type="text" name="lastName" [(ngModel)]="userModel.lastName"
+                    [disabled]="true" />
+            </div>
+            <div>
+                <label class="form-label">{{'models.client.nickname' | translate}}</label>
+                <input class="form-control" type="text" name="nickname" [(ngModel)]="userModel.nickname"
+                    [disabled]="true" />
+            </div>
+            <div>
+                <label class="form-label">{{'models.user.email' | translate}}</label>
+                <input class="form-control" type="email" name="email" [(ngModel)]="userModel.email"
+                    [disabled]="!userModel.permissions.users.canUpdateSelfEmail" />
+            </div>
+            <div>
+                <label class="form-label">{{'models.user.taxPayerId' | translate}}</label>
+                <input class="form-control" type="text" name="taxPayerId" [(ngModel)]="userModel.taxPayerId"
+                    [disabled]="true" />
+            </div>
+            <div>
+                <label class="form-label">{{'models.client.scanRadius' | translate}}</label>
+                <input class="form-control" type="number" min="0" step="0.5" value="5" name="scanRadius"
+                    [(ngModel)]="userModel.scanRadius" [disabled]="true" />
+                <label class="form-label description">{{'admin.user.scanRadius.description' | translate}}</label>
+            </div>
+            <div>
+                <label class="form-label">{{'models.client.status' | translate}}: {{'models.clientStatuses.' +
+                    statusToText() | translate}}</label>
+            </div>
+            <button class="btn btn-primary" type="button" [routerLink]="['/home/user/changePassword']">{{'buttons.changePassword' |
+                translate}}</button>
+        </div>
+    </form>
+    <div class="d-flex justify-content-center buttons">
+        <button #actionButton class="btn btn-primary" type="button" style="min-width: 128px;"
+            (click)="save()">{{'buttons.save' | translate}}</button>
+        <button class="btn btn-secondary" type="button" style="min-width: 128px;" (click)="cancel()">{{'buttons.cancel'
+            | translate}}</button>
+    </div>
+</div>
